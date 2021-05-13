@@ -29,4 +29,12 @@ func TestCreateRepoRequestAsJson(t *testing.T) {
 	// Unmarshal takes input byte array (JSON) and a pointer to struct we want to populate with JSON fields
 	err = json.Unmarshal(bytes, &target)
 	assert.Nil(t, err)
+
+	assert.EqualValues(t, request.Name, target.Name)
+	assert.EqualValues(t, request.Description, target.Description)
+	assert.EqualValues(t, request.HasIssues, target.HasIssues)
+	assert.EqualValues(t, request.HasProjects, target.HasProjects)
+	assert.EqualValues(t, request.HasWiki, target.HasWiki)
+	assert.EqualValues(t, request.Private, target.Private)
+	assert.EqualValues(t, request.Homepage, target.Homepage)
 }
