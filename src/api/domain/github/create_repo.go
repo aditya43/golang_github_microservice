@@ -9,3 +9,24 @@ type CreateRepoRequest struct {
 	HasProjects bool   `json:"has_projects"`
 	HasWiki     bool   `json:"has_wiki"`
 }
+
+type CreateRepoResponse struct {
+	Id          int64           `json:"id"`
+	Name        int64           `json:"name"`
+	FullName    int64           `json:"full_name"`
+	Owner       RepoOwner       `json:"owner"`
+	Permissions RepoPermissions `json:"permissions"`
+}
+
+type RepoOwner struct {
+	Id      int64  `json:"id"`
+	Login   string `json:"login"`
+	Url     string `json:"url"`
+	HtmlUrl string `json:"html_url"`
+}
+
+type RepoPermissions struct {
+	IsAdmin bool `json:"admin"`
+	HasPull bool `json:"push"`
+	HasPush bool `json:"pull"`
+}
