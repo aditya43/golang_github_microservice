@@ -6,9 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const (
-	polo = "polo"
-)
+const polo = "polo"
 
 func Marco(c *gin.Context) {
 	c.String(http.StatusOK, polo)
