@@ -19,9 +19,7 @@ type reposServiceInterface interface {
 	CreateRepos(request []repositories.CreateRepoRequest) (repositories.CreateReposResponse, errors.ApiError)
 }
 
-var (
-	RepositoryService reposServiceInterface
-)
+var RepositoryService reposServiceInterface
 
 func init() {
 	RepositoryService = &reposService{}
